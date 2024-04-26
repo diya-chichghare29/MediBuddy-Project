@@ -1,0 +1,54 @@
+<div class="container mt-4">
+   <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-7 py-4 border rounded-4">
+         <strong class="ms-2">Cart items </strong><span class="ms-2">{{orderObj.products.length}} items</span>
+         <div class="card mt-2 py-3 card-block" *ngFor="let item of orderObj.products;let i=index">
+            <div class="card-body row">
+               <div class="col-md-7 ms-2">
+                  <h6 class="card-text">{{item.description}}</h6>
+                  <p class="card-text text-muted">{{item.brand}}</p>
+                  <p class="card-text text-muted">{{item.type}}</p>
+               </div>
+               <div class="col-md-4 text-end">
+                  <p class="card-text">₹ {{item.discountPrice}} &nbsp;<span
+                        class="text-decoration-line-through">MRP&nbsp; ₹ {{item.actualPrice}}</span></p>
+                  <p> <i class="bi bi-dash-circle text-primary cursor fs-5"
+                        (click)="quantityChange(i, 'decrement')"></i>&nbsp;{{item.quantity}}&nbsp;
+                     <i class="bi bi-plus-circle text-primary cursor fs-5" (click)="quantityChange(i, 'increment')"></i>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 ms-4 py-4 rounded-4 border h-75">
+         <div class="card card-block">
+            <div class="card-body">
+               <strong class="ms-2 mb-2">Payment Details</strong>
+               <hr class="mt-2 ms-2">
+               <div class="row">
+                  <div class="col-md-5 ms-2">
+                     <p class="card-text fs-6">MRP Totals</p>
+                     <p class="card-text fs-6">Discounts</p>
+                  </div>
+                  <div class="col-md-5 text-end">
+                     <p class="card-text fs-6">₹ {{orderObj.totalAmount}} /-*</p>
+                     <p class="card-text fs-6">₹ {{orderObj.totalDiscount}} /-*</p>
+                  </div>
+               </div>
+               <hr class="mt-2 ms-2">
+               <div class="row mt-1">
+                  <div class="col-md-6">
+                     <p class="card-text text-muted">Amount to Pay</p>
+                     <p style="margin-bottom: -5px;">₹ {{orderObj.finalAmount}} /-*</p>
+                  </div>
+                  <div class="col-md-5 mt-4 text-center fs-6 text-light bg-primary rounded-4 border pt-3 cursor"
+                     routerLink="/booking-details" (click)="checkout()">
+                     Checkout
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

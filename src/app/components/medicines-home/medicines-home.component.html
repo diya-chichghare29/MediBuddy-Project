@@ -1,0 +1,114 @@
+<!--search box-->
+<div class="row py-5 text-center bg-primary text-light mt-1" style="height: 70;">
+  <div class="col">
+    <h3 class="fw-300 ">Get Huge Savings on Medicines</h3>
+    <div class="d-flex justify-content-center bd-highlight mb-1">
+      <div class="p-2 bd-highlight"><i class="bi bi-check-circle mx-1"></i>
+        100 % Genuine Medicines</div>
+      <div class="p-2 bd-highlight"><i class="bi bi-check-circle mx-1"></i>Trusted Phamacies</div>
+      <div class="p-2 bd-highlight"><i class="bi bi-check-circle mx-1"></i>Delivery to your doorstep</div>
+      <div class="p-2 bd-highlight"><i class="bi bi-check-circle mx-1"></i>Store pick up</div>
+    </div>
+  </div>
+
+
+  <!-- Button triggering the modal -->
+  <nav class="container">
+    <div class="justify-content-center shadow">
+      <form class="d-flex" role="search">
+        <button type="button" class="btn btn-outline-light border p-3 bg-white" style="width: 200px;"
+          data-bs-toggle="modal" data-bs-target="#exampleModal">
+          {{pincode ? pincode : 'Nagpur 440018' }}
+          <i class="bi bi-chevron-down p-3"></i>
+        </button>
+        <input class="form-control" type="search" placeholder="Search Medicines" aria-label="Search" aria-describedby=""
+          style="width: 500px;">
+        <button class="btn btn-outline-light border bg-white text-primary fw-bolder" type="submit"
+          style="width: 150px;"><i class="bi bi-search p-2 fw-bolder"></i>Search</button>
+      </form>
+    </div>
+  </nav>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">See Your location</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body btn-outline-secondary">
+        <form class="form-control" (ngSubmit)="setPincode()">
+          <div class="mb-3">
+            <label for="pincode"> Pincode Enter:</label>
+            <input type="text" name="pincode" class="form-control" id="pincode" [(ngModel)]="pincode">
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 p-2 w-75">
+  <img src="../../../assets/images/medicine-page.webp" alt="medicine-page-images" width="1000" height="200">
+</div>
+
+<!--Carousel add-->
+<div class="container mt-2 py-4 w-75">
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../../../assets/../assets/images/otcStore.webp" class="d-block w-100" alt="..." width="1000"
+              height="200">
+          </div>
+          <div class="col-md-6">
+            <img src="../../../assets/images/HealthPeWealth-Creative.jpg" class="d-block w-100" alt="..." width="1000"
+              height="200">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../../../assets/images/copy-of-adgully_2.png.png" class="d-block w-100" alt="..." width="1000"
+              height="200">
+          </div>
+          <div class="col-md-6">
+            <img src="../../../assets/../assets/images/banner_2.png" class="d-block w-100" alt="..." width="1000"
+              height="200">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+
+
+
+<app-top-deals></app-top-deals>

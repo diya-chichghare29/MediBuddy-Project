@@ -1,0 +1,49 @@
+<div class="row p-2">
+
+    <p class="text-danger fs-6" *ngIf="isotpInvalid">Please enter Valid OTP</p>
+    <p class="text-danger fs-6" *ngIf="!isOtpVerified">Mobile Verification is Mandatory</p>
+
+    <form #userRegistrationForm="ngForm" (ngSubmit)="signUp()">
+        <div class="mb-3">
+            <label for="id1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="id1" name="name" [(ngModel)]="userObj.name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="id3" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="id3" name="email" [(ngModel)]="userObj.email" required>
+        </div>
+
+        <label for="id3" class="form-label">Mobile No</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" name="mobleNo"
+                [(ngModel)]="userObj.mobileNo" required maxlength="10" minlength="10">
+            <span *ngIf="!isOtpVerified  && userObj.mobileNo" class="input-group-text cursor bg-primary text-light" id="basic-addon2"
+                (click)="getOtp()">Get OTP</span>
+            <span *ngIf="isOtpVerified" class="input-group-text"> <i
+                    class="bi bi-check-circle fs-5 text-success"></i></span>
+        </div>
+
+        <ng-container *ngIf="displayOtpField">
+            <label for="id3" class="form-label">Enter OTP</label>
+            <div class="input-group mb-3">
+                <input type="text" id="basic-addon3" class="form-control" placeholder="" name="otp"
+                    [(ngModel)]="otpEntered" maxlength="6">
+                <span class="input-group-text cursor bg-primary text-light" id="basic-addon3"
+                    (click)="verifyOTP()">Verify OTP</span>
+            </div>
+            <p class="fs-6">OTP is valid for <strong>{{otpTimer}}&nbsp;Sec</strong></p>
+        </ng-container>
+
+        <div class="mb-3">
+            <label for="id4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="id4" name="password" [(ngModel)]="userObj.password"
+                required>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" [disabled]="userRegistrationForm.invalid" type="submit">SignUp</button>
+        </div>
+    </form>
+</div> 
+

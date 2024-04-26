@@ -1,0 +1,68 @@
+<!--Top deals-->
+<div class="container">
+    <div class="clearfix mt-5 mb-2">
+        <h2 class="float-start ms-5">Top Deals</h2>
+        <h4 class="float-end"><a routerLink="/otcCategory">View All</a></h4>
+    </div>
+
+    <div>
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let deal of topDeals">
+                <ng-template carouselSlide [id]="deal.id">
+                    <div class="card card-block mt-4 mb-5 border border-2 shadow-sm "
+                        style="width: 16rem; border-radius: 1rem;">
+                        <img [src]="deal.productImageSlug[0]" [alt]="" [title]="deal.descriptionString" height="200"
+                            width="200" style="border-radius:1rem">
+                        <div class="card-body">
+                            <h5 class="card-title text-desc" [title]="deal.description">{{deal.description}}</h5>
+                            <p class="card-text text-muted">{{deal.type}}</p>
+                            <p><span class="text-muted">MRP&nbsp;</span><span
+                                    class="text-decoration-line-through">₹{{deal.discountPrice}}</span>&nbsp;<span>₹{{deal.actualPrice}}</span>
+
+                                <!--ADD button to include a click event -->
+                                <button type="button" routerLink="/cart"
+                                    class="btn btn-outline-primary btn-sm ms-3 px-2" (click)="addToCart(deal)">ADD
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+</div>
+
+<!--Order Medicines through Prescription-->
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-9 text-start">
+            <h2>Order Medicines through Prescription</h2>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center mt-4 px-5">
+    <div class="col-md-5 mb-4">
+        <div class="card px-2 rounded-4">
+            <div class="card-body">
+                <h5 class="card-title">Upload Prescription to place order</h5>
+                <p class="card-text">Upload only .jpg .png or .pdf files, size limit is 15 MB</p>
+                <button type="button" class="btn btn-primary">Order via Prescription</button>
+                <p>How to Order?</p>
+                <img src="../../../assets/images/rx.svg" class="card-img-top mx-auto d-block" alt="..." width="50"
+                    height="100">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 mb-4">
+        <div class="card px-2 rounded-4">
+            <div class="card-body">
+                <h5 class="card-title">Don't have a Prescription?</h5>
+                <p class="card-text">Consult Top Doctors Online and order medicines through valid prescriptions</p>
+                <button type="button" class="btn btn-primary">Start Consulation <i
+                        class="bi bi-arrow-right p-2"></i></button>
+                <img src="../../../assets/images/med-consultation.svg" class="card-img-top mx-auto d-block" alt="..."
+                    width="50" height="100">
+            </div>
+        </div>
+    </div>
+</div>

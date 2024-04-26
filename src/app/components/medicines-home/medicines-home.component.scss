@@ -1,0 +1,21 @@
+.row {
+  height: 180px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+}
+
+button {
+  color: black;
+  font-size: medium;
+}
+
+
+.carousel-indicators {
+  display: none;
+}

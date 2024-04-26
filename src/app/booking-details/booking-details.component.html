@@ -1,0 +1,107 @@
+<div class="container shadow-sm mt-4 mb-4 w-50 py-5 border">
+    <div class="row text-center">
+        <h2>Booking Detials</h2>
+        <p class="mt-2 py-2 bg-primary text-light">Delivery Details</p>
+    </div>
+    <form>
+        <div class="row ms-5">
+            <div class="col-md-3">
+                <label for="Name1">Name</label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" id="Name1" class="form-control w-75" formControlName="fullName">
+            </div>
+        </div>
+        <div class="row mt-3 ms-5">
+            <div class="col-md-3">
+                <label for="mobileNo">Mobile Number</label>
+            </div>
+            <div class="col-md-9 text-end">
+                <input type="text" id="mobileNo" class="form-control w-75" formControlName="mobileNo">
+            </div>
+        </div>
+        <div class="row mt-3 ms-5">
+            <div class="col-md-3">
+                <label for="gender">Gender</label>
+            </div>
+            <div class="col-md-9">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="male" checked>
+                    <label class="form-check-label" for="male">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="female">
+                    <label class="form-check-label" for="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 ms-5">
+            <div class="col-md-3">
+                <label for="dob">Date Of Birth</label>
+            </div>
+            <div class="col-md-9 text-end">
+                <input type="date" name="" id="dob" class="form-control w-75" formControlName="dob">
+            </div>
+        </div>
+        <div class="row mt-3 ms-5">
+            <div class="col-md-3">
+                <label for="emailId">Email Id</label>
+            </div>
+            <div class="col-md-9 text-end ">
+                <input type="email" name="" id="emailId" class="form-control w-75" formControlName="emailId">
+            </div>
+        </div><br>
+        <div>
+            <h4 class="text-center"><u>Deliver Address</u></h4>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="line1" class="form-lable">Flat/House Number</label>
+                <input type="text" name="" class="form-control" id="line1" formControlName="line1">
+            </div>
+            <div class="col-md-4">
+                <label for="line2" class="form-lable">Area, Colony</label>
+                <input type="text" class="form-control" name="" id="line2" formControlName="line2">
+            </div>
+            <div class="col-md-4">
+                <label for="landmark" class="form-lable">LandMark</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="landmark" formControlName="landmark">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="city" class="form-lable">City</label>
+                <input type="text" class="form-control" id="city" formControlName="city">
+            </div>
+            <div class="col-md-3">
+                <label for="state" class="form-lable">State</label>
+                <select name="" id="state" class="form-select" formControlName="state">
+                    <option selected disabled value="">choose...</option>
+                    <option value="">Maharashtra</option>
+                    <option value="">Madhya Pradesh</option>
+                    <option value="">Gujrat</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="pincode">Zip Code</label>
+                <input type="text" class="form-control" id="pincode" formControlName="pincode">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="" id="checkBox">
+                <label for="checkBox" class="form-check-label">Agree to terms and condition</label>
+            </div>
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="sumbmit" routerLink="/place-order">Place Order</button>
+        </div>
+    </form>
+</div>

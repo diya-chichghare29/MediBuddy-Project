@@ -1,0 +1,18 @@
+<div class="row p-2">
+    <p class="text-success" *ngIf="isNewUser">User Does Not Exist Please Do SignUp First</p>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="mb-3">
+                <label for="id1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="id1" formControlName="email">
+            </div>
+
+            <div class="mb-1">
+                <label for="id2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="id2" formControlName="password">
+            </div>
+
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
